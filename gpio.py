@@ -1,8 +1,9 @@
+#This is a demo to test GPIO LED light on Raspi. Please make to run sudo apt-get -y install python3-rpi.gpio before executing this code.
 import RPi.GPIO as GPIO
 import time
 
 # List of GPIO pins
-GPIO_PINS = [13, 19, 26]
+GPIO_PINS = [13, 19, 26] # The pins are subject to change
 
 # Setup
 GPIO.setmode(GPIO.BCM)  # Use Broadcom pin numbering
