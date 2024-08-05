@@ -48,3 +48,9 @@ Coral device such as the
 
     sh install_requirements.sh
     ```
+
+5.  Running the code
+    
+    ```
+    python detect.py
+    ```

@@ -3,7 +3,7 @@ import cv2
 import os
 import RPi.GPIO as GPIO
 
-GPIO_PINS = [13, 19, 26]
+GPIO_PINS = [13, 19, 26] # The pins are subject to change
 
 # Setup
 GPIO.setmode(GPIO.BCM) 
@@ -61,8 +61,8 @@ def main():
             run_inference(interpreter, cv2_im_rgb_resized.tobytes())
             objs = get_objects(interpreter, args.threshold)[:args.top_k]
             countHuman = sum(1 for obj in objs if obj.id==0)
-            GPIO.output(GPIO_PINS[1], GPIO.HIGH if countHuman == 0 else GPIO.LOW)
-            GPIO.output(GPIO_PINS[0], GPIO.HIGH if countHuman == 1 else GPIO.LOW)
+            GPIO.output(GPIO_PINS[0], GPIO.HIGH if countHuman == 0 else GPIO.LOW)
+            GPIO.output(GPIO_PINS[1], GPIO.HIGH if countHuman == 1 else GPIO.LOW)
             GPIO.output(GPIO_PINS[2], GPIO.HIGH if countHuman  > 1 else GPIO.LOW)
 
             # Append detection results to the RGB frame
