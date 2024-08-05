@@ -21,9 +21,9 @@ Coral device such as the
 2.  Clone this Git repo onto your computer:
 
     ```
-    git clone 
+    git clone https://github.com/kg3354/Coral_GPIO.git
     
-    cd 
+    cd Coral_GPIO
     
     mkdir google-coral && cd google-coral
 
